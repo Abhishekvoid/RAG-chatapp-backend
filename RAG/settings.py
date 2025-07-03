@@ -96,9 +96,15 @@ ASGI_APPLICATION = "RAG.asgi.application"
 
 CORS_ALLOWED_ORIGINS = [
     "https://rag-chatapp-frontend.vercel.app"   
-    "http://localhost:3000",              
+    "http://localhost:3000",         
+    "http://192.168.0.56:3000",     
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://rag-chatapp-backend.onrender.com",
+    "https://rag-chatapp-frontend.vercel.app/",
+    "http://192.168.0.56:3000",
+]
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
