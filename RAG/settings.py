@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -47,6 +48,7 @@ INSTALLED_APPS = [
 ASGI_APPLICATION = "RAG.asgi.application"
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -92,6 +94,10 @@ CHANNEL_LAYERS = {
 
 ASGI_APPLICATION = "RAG.asgi.application"
 
+CORS_ALLOWED_ORIGINS = [
+    "https://rag-chatapp-frontend.vercel.app"   
+    "http://localhost:3000",              
+]
 
 
 # Database
